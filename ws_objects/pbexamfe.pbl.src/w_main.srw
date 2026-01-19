@@ -9,6 +9,8 @@ type mdirbb_1 from ribbonbar within w_main
 end type
 type mditbb_1 from tabbedbar within w_main
 end type
+type st_4 from statictext within w_main
+end type
 type tab_info from tab within w_main
 end type
 type tabpage_desc from userobject within tab_info
@@ -122,6 +124,7 @@ event ue_resize ( )
 mdi_1 mdi_1
 mdirbb_1 mdirbb_1
 mditbb_1 mditbb_1
+st_4 st_4
 tab_info tab_info
 lb_cwd lb_cwd
 tab_examples tab_examples
@@ -731,15 +734,17 @@ end event
 on w_main.create
 if this.MenuName = "m_main" then this.MenuID = create m_main
 this.mdi_1=create mdi_1
-this.mdirbb_1=create mdirbb_1
 this.mditbb_1=create mditbb_1
+this.mdirbb_1=create mdirbb_1
+this.st_4=create st_4
 this.tab_info=create tab_info
 this.lb_cwd=create lb_cwd
 this.tab_examples=create tab_examples
 this.gb_current=create gb_current
 this.Control[]={this.mdi_1,&
-this.mdirbb_1,&
 this.mditbb_1,&
+this.mdirbb_1,&
+this.st_4,&
 this.tab_info,&
 this.lb_cwd,&
 this.tab_examples,&
@@ -759,6 +764,7 @@ if IsValid(MenuID) then destroy(MenuID)
 destroy(this.mdi_1)
 destroy(this.mdirbb_1)
 destroy(this.mditbb_1)
+destroy(this.st_4)
 destroy(this.tab_info)
 destroy(this.lb_cwd)
 destroy(this.tab_examples)
@@ -833,6 +839,23 @@ int X=0
 int Y=0
 int Width=0
 int Height=104
+end type
+
+type st_4 from statictext within w_main
+integer x = 1929
+integer y = 308
+integer width = 517
+integer height = 68
+integer textsize = -10
+integer weight = 700
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Segoe UI"
+long textcolor = 33554432
+long backcolor = 67108864
+string text = "hello world"
+boolean focusrectangle = false
 end type
 
 type tab_info from tab within w_main

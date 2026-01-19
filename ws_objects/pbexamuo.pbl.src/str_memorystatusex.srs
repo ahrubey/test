@@ -1,0 +1,14 @@
+﻿$PBExportHeader$str_memorystatusex.srs
+$PBExportComments$Structure
+global type str_memorystatusex from structure
+	unsignedlong		sul_dwlength
+	unsignedlong		sul_dwmemoryload
+	longlong		sul_dwtotalphys
+	longlong		sul_dwavailphys
+	longlong		sul_dwtotalpagefile
+	longlong		sul_dwavailpagefile
+	longlong		sul_dwtotalvirtual
+	longlong		sul_dwavailvirtual
+	longlong		sul_dwavaiExtendedvirtual
+end type
+
